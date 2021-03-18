@@ -5,7 +5,7 @@ from data import db_session
 from data.table1 import Table1
 
 app = Flask(__name__)
-
+db_session.global_init("db/bl.db")
 
 @app.route("/")
 def index1():
@@ -15,7 +15,6 @@ def index1():
 
 
 def main():
-    db_session.global_init("db/bl.db")
     app.run()
 
 
